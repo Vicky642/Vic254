@@ -1,0 +1,86 @@
+import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
+
+const HomeScreen = () => {
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView style={styles.container}>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
+          <View style={styles.header}>
+            <Image
+              source={require('../assets/logo.png')}
+              style={styles.logo}
+            />
+            <TouchableOpacity style={styles.cart}>
+              <Image
+                source={require('../assets/cart.png')}
+                style={styles.cartIcon}
+              />
+              <Text style={styles.cartCount}>2</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.categories}>
+            <TouchableOpacity style={styles.category}>
+              <Image
+                source={require('../assets/pizza.png')}
+                style={styles.categoryIcon}
+              />
+              <Text style={styles.categoryName}>Pizza</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.category}>
+              <Image
+                source={require('../assets/burger.png')}
+                style={styles.categoryIcon}
+              />
+              <Text style={styles.categoryName}>Burgers</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.category}>
+              <Image
+                source={require('../assets/sushi.png')}
+                style={styles.categoryIcon}
+              />
+              <Text style={styles.categoryName}>Sushi</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.category}>
+              <Image
+                source={require('../assets/taco.png')}
+                style={styles.categoryIcon}
+              />
+              <Text style={styles.categoryName}>Tacos</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.recommended}>
+            <Text style={styles.recommendedTitle}>Recommended for you</Text>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              style={styles.recommendedList}>
+              <TouchableOpacity style={styles.recommendedItem}>
+                <Image
+                  source={require('../assets/pizza1.png')}
+                  style={styles.recommendedImage}
+                />
+                <Text style={styles.recommendedName}>Pepperoni Pizza</Text>
+                <Text style={styles.recommendedPrice}>$10.99</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.recommendedItem}>
+                <Image
+                  source={require('../assets/burger1.png')}
+                  style={styles.recommendedImage}
+                />
+                <Text style={styles.recommendedName}>Cheeseburger</Text>
+                <Text style={styles.recommendedPrice}>$8.99</Text>
+             </TouchableOPacity>
+            </ScrollView>
